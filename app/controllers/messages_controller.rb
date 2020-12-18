@@ -13,11 +13,13 @@ class MessagesController < ApplicationController
             RoomsChannel.broadcast_to(room, {
                 room: room,
                 users: room.users,
-                messages: room.messages
+                messages: room.messages.map do |message|
+                    {:user => message.user, :message => message}
+                end
             })
-            render json: room
+        else
+            puts message.errors.messages
         end
-        
     end
 
     private
