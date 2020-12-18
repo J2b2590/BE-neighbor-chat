@@ -1,7 +1,7 @@
 class RoomsChannel < ApplicationCable::Channel
   def subscribed
     # stream_from "some_channel"
-    puts "SUBED" * 10
+    puts "COOOONNNNNECTTTTTEED"
     @room = Room.find_by(id: params[:room])
     stream_for @room
   end
@@ -11,7 +11,6 @@ class RoomsChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    puts "UNSUBED" * 10
     # Any cleanup needed when channel is unsubscribed
   end
 end

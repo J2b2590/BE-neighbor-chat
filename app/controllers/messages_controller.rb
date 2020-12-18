@@ -6,15 +6,18 @@ class MessagesController < ApplicationController
     end
 
     def create
+       
         message = Message.new(message_params)
         if message.save
-            RoomsChannel.broadcast_to(room,{
-                room: Room.new(room),
-                users: User.new(room.users),
-                messages: Message.new(room.messages)
+            room = Room.find(params[:message][:room_id])
+            RoomsChannel.broadcast_to(room, {
+                room: room,
+                users: room.users,
+                messages: room.messages
             })
+            render json: room
         end
-        render json: message
+        
     end
 
     private

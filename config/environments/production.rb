@@ -32,11 +32,11 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain.
-  # config.action_cable.mount_path = nil
-  # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  # config.action_cable.mount_path ="/cable"
+  # config.action_cable.url = 'wss://localhost/3000/cable'
+  # config.action_cable.allowed_request_origins = [ 'http://localhost/3000']
 
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  # Fore all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
