@@ -8,4 +8,5 @@ class RoomSerializer < ActiveModel::Serializer
       {:user => message.user, :message => message}
     end
   end
+  
 end
