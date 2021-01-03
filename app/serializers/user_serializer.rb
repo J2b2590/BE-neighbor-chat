@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-    attributes :id, :username
+    attributes :id, :username, :favorite_rooms
     has_many :messages
+    
 
     # def user
     #   u = User.find(object.user_id)
