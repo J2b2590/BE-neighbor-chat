@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-    attributes :id, :username, :favorite_rooms
+    attributes :id, :username
     has_many :messages
+    has_many :favorites
     
 
     # def user

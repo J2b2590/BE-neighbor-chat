@@ -6,14 +6,14 @@ class FavoritesController < ApplicationController
         end
     
         def create
-        
             favorite = Favorite.create(favorite_params)
             render json: favorite
         end
     
         def destroy
+            
             favorite = Favorite.find(params[:id])
-            favorite.destroy()
+            Favorite.destroy(favorite.id)
             render json: favorite
         end
     

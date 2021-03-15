@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :favorites
   resources :messages, only: [:index, :create]
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index, :create, :show]
   resources :rooms, only: [:index, :show]
 
    post "/login", to: "user#login"
